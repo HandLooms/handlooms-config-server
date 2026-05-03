@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/HandLooms/handlooms-config-repo.git
+          default-label: main
+          clone-on-start: true
+          timeout: 10
+          search-paths: .
+
+
+server:
+  port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
